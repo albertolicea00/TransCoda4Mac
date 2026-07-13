@@ -1,0 +1,40 @@
+name: TransCoda
+options:
+  bundleIdPrefix: dev.transcoda
+  deploymentTarget:
+    macOS: "14.0"
+  createIntermediateGroups: true
+
+settings:
+  base:
+    SWIFT_VERSION: "5.10"
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+
+targets:
+  TransCoda:
+    type: application
+    platform: macOS
+    sources:
+      - path: TransCoda/Sources
+    entitlements:
+      path: TransCoda/TransCoda.entitlements
+      properties:
+        # Unsandboxed for development: the app launches a Homebrew-installed
+        # FFmpeg and writes output next to arbitrary source files. A sandboxed
+        # profile with a bundled FFmpeg is future work.
+        com.apple.security.app-sandbox: false
+    info:
+      path: TransCoda/Info.plist
+      properties:
+        CFBundleDisplayName: TransCoda
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        LSApplicationCategoryType: public.app-category.video
+        LSMinimumSystemVersion: "14.0"
+        NSHumanReadableCopyright: "© 2026 Alberto Licea. MIT License."
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: dev.transcoda.mac
+        ENABLE_HARDENED_RUNTIME: YES
+        CODE_SIGN_STYLE: Automatic
