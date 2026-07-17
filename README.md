@@ -1,6 +1,6 @@
-# TransCoda for macOS
+# 🏭 TransCoda for macOS 🎬
 
-<p align="center">
+<p align="left">
   <img src="https://img.shields.io/badge/Swift-5.9-F05138?logo=swift" alt="Swift 5.9"/>
   <img src="https://img.shields.io/badge/macOS-14+-000000?logo=apple" alt="macOS 14+"/>
   <img src="https://img.shields.io/badge/XcodeGen-✓-black?logo=xcode" alt="XcodeGen"/>
